@@ -1,0 +1,22 @@
+package lab5;
+import lab4.Turtle;
+import java.util.Random;
+import se.lth.cs.window.SimpleWindow;
+
+public class TwoTurtles {
+	public static void ain(String[] args){
+		SimpleWindow w = new SimpleWindow(400,400,"TwoTurtles");
+		Turtle t1 = new Turtle(w, 300, 300);
+		Turtle t2 = new Turtle(w, 200, 200);
+		double tDist = Math.hypot((t2.getX() - t1.getX()), (t2.getY() - t1.getY()));
+		
+		while( tDist >= 50 ){
+			t1.forward(r.nextInt(10)+1);
+			t1.left(r.nextInt(360)+1);
+			t2.forward(r.nextInt(10)+1);
+			t2.left(r.nextInt(360)+1);
+			tDist = Math.hypot((t2.getX() - t1.getX()), (t2.getY() - t1.getY()));
+		}
+	}
+
+}

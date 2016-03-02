@@ -1,0 +1,11 @@
+package lab10;
+
+import se.lth.cs.ptdc.shapes.Shape;
+
+public class Triangle extends Shape {
+	private int side;
+	public Triangle(x,y,side){
+		super(x,y);
+		this.side = side;
+	}
+}

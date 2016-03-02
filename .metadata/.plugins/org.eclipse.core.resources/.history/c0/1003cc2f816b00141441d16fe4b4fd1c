@@ -1,0 +1,82 @@
+package lab4;
+import se.lth.cs.window.SimpleWindow;
+
+public class Turtle {
+	// ... lägg till attribut
+	private double x;
+	private double y;
+	protected SimpleWindow w;
+	private boolean penDown;
+	private int angle;
+	
+	/**
+	 * Skapar en sköldpadda som ritar i ritfönstret w. Från början befinner sig
+	 * sköldpaddan i punkten x,y med pennan lyft och huvudet pekande rakt uppåt
+	 * i fönstret (i negativ y-riktning)
+	 */
+	public Turtle(SimpleWindow w, int x, int y) {
+		this.w = w;
+		this.x = x;
+		this.y = y;
+		penDown = false;
+		angle = 90;
+	}
+	
+	/** Sänker pennan */
+	public void penDown() {
+		penDown = true;
+	}
+	
+	/** Lyfter pennan */
+	public void penUp() {
+		penDown = false;
+	}
+		
+	//Bör vara klar
+	/** Går rakt framåt n pixlar i den riktning som huvudet pekar */
+	public void forward(int n) {
+		w.moveTo((int)x, (int)y);
+		//Om pennan är nere så ska den rita
+		if(penDown){
+			x = this.x + Math.cos(Math.toRadians(angle)) * n;
+			y = this.y + Math.sin(Math.toRadians(angle)) * n;
+			int tempX = (int)Math.round(x);
+			int tempY = (int)Math.round(y);
+			w.lineTo(tempX, tempY);
+		}
+	}
+	
+	/** Vrider beta grader åt vänster runt pennan */
+	public void left(int beta) {
+		angle += beta;
+	}
+	
+	/** Går till punkten newX,newY utan att rita. Pennans läge (sänkt 
+	    eller lyft) och huvudets riktning påverkas inte */
+	public void jumpTo(int newX, int newY) {
+		x = newX;
+		y = newY;
+	}
+	
+	/** Återställer huvudriktningen till den ursprungliga */
+	public void turnNorth() {
+		angle = 90;
+	}
+	
+	/** Tar reda på x-koordinaten för sköldpaddans aktuella position */
+	public int getX() {
+		int tempX = (int)Math.round(x);
+		return tempX;
+	}
+	
+	/** Tar reda på y-koordinaten för sköldpaddans aktuella position */
+	public int getY() {
+		int tempY = (int)Math.round(y);
+		return tempY;
+	}
+	
+	/** Tar reda på sköldpaddans riktning, i grader från positiv x-led */
+	public int getDirection() {
+		return angle;
+	}
+}

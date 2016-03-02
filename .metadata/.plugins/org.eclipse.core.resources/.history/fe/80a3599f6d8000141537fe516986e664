@@ -1,0 +1,12 @@
+package lab10;
+
+import se.lth.cs.ptdc.shapes.Shape;
+
+public class Square extends Shape{
+	private int x;
+	private int y;
+	
+	public Square(int x, int y){
+		break;
+	}
+}

@@ -1,0 +1,47 @@
+package lab7;
+
+import se.lth.cs.ptdc.cardGames.Card;
+import java.util.Random;
+
+class CardDeck {
+	private Card[] cards; // korten
+	private int current; // index för "nästa" kort
+	private static Random rand = new Random();
+	
+	
+	/** Skapar en kortlek */
+	public CardDeck() {
+			cards = new Card[52]; 	// skapa vektorn
+			current = 0;			//Index för "nästa" kort			
+			for(int suit = Card.SPADES; suit <= Card.CLUBS; suit++){
+				for(int i = 1; i < 13; i++){
+					cards[current] = new Card(suit, i);
+					current++;
+				}
+			}
+
+	}
+	public void shuffle() {
+		//
+	}
+
+	/**
+	 * Undersöker om det finns fler kort i kortleken.
+	 * 
+	 * @return true om det finns fler kort, false annars
+	 */
+	public boolean moreCards() {
+		// ...
+		return false;
+	}
+
+	/**
+	 * Drar det översta kortet i leken. Fungerar bara om moreCards är true.
+	 * 
+	 * @return det översta kortet i leken
+	 */
+	public Card getCard() {
+		// ...
+		return null;
+	}
+}

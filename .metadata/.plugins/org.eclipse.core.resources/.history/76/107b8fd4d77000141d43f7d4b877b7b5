@@ -1,0 +1,15 @@
+package lab7;
+
+import se.lth.cs.ptdc.cardGames.Card;
+import java.util.Random;
+class CardDeck {
+	private Card[] cards; // korten
+	private int current; // index för "nästa" kort
+	private static Random rand = new Random();
+	/** Skapar en kortlek */
+	public CardDeck() {
+			cards = new Card[52]; // skapa vektorn
+			// skapa korten, lägg in dem i vektorn
+			current = 0;
+	}
+}

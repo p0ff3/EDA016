@@ -1,0 +1,11 @@
+package lab5;
+import lab4.Turtle;
+
+public class TwoTurtles {
+	public static void ain(string[] args){
+		SimpleWindow w = new SimpleWindow(400,400,"TwoTurtles");
+		Turtle t1 = new Turtle(w, 300, 300);
+		Turtle t2 = new Turtle(w, 200, 200);
+	}
+
+}

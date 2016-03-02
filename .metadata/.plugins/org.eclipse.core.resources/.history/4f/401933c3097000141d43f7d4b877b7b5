@@ -1,0 +1,27 @@
+package lab7;
+import se.lth.cs.ptdc.cardGames.Card;
+import se.lth.cs.ptdc.cardGames.CardDeck;
+
+public class Patiens {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		int accuracy = 10000;
+		int winners = 0;
+		 
+		for(int i = 1; i < accuracy; i++){
+			//Yttre loopen är för hur många kortlekar vi ska köra med.
+			CardDeck deck = new CardDeck();
+			deck.shuffle();
+			
+			while(deck.moreCards()){
+				//Nu går vi igenom hela kortleken deck och kör tills vi misslyckas med patiensen.
+					
+					
+				}
+		}
+		System.out.println("FUUUCK: " + (winners/accuracy));
+	}
+}
+	
+

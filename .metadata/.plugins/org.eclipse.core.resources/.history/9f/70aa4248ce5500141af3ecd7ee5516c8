@@ -1,0 +1,18 @@
+package lab5;
+import lab4.Turtle;
+import java.util.Random;
+import se.lth.cs.window.SimpleWindow;
+
+public class ThousandSteps {
+	public static void main (String[] args){
+		SimpleWindow w = new SimpleWindow(600,600,"TURTLEEE");
+		Turtle t = new Turtle(w, 300,300);
+		t.penDown();
+		Random r = new Random();
+		
+		for(int i = 0; i < 1000000; i++){
+			t.forward(r.nextInt(10));
+			t.left(r.nextInt(360));
+		}
+	}	
+}
